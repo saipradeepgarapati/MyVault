@@ -1,0 +1,1798 @@
+MyVault — Complete style.css/* =========================================================
+   MYVAULT - CRYSTAL VAULT
+   Complete Style Sheet
+   Dashboard + Upload + Documents + Search
+   OCR + Preview + Events + Login + Register
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    color: #eaf7ff;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(0, 174, 255, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(91, 93, 255, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(0, 215, 255, 0.06),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #020812 0%,
+            #061323 45%,
+            #020914 100%
+        );
+
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: #55d9ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #a5edff;
+}
+
+
+/* =========================================================
+   GLOBAL SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #030b16;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        #168fc4,
+        #2451a8
+    );
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #32c9ff;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+   ========================================================= */
+
+.background-decoration {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.20;
+}
+
+.blob-1 {
+    width: 300px;
+    height: 300px;
+
+    top: -100px;
+    left: -100px;
+
+    background: #008cff;
+}
+
+.blob-2 {
+    width: 350px;
+    height: 350px;
+
+    right: -130px;
+    top: 25%;
+
+    background: #713cff;
+}
+
+.blob-3 {
+    width: 250px;
+    height: 250px;
+
+    left: 35%;
+    bottom: -120px;
+
+    background: #00d9ff;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(1180px, calc(100% - 30px));
+
+    margin: 0 auto;
+
+    padding: 28px 0 35px;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand-section {
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+.vault-logo {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 31px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(27, 83, 130, 0.90),
+            rgba(23, 35, 91, 0.90)
+        );
+
+    border:
+        1px solid rgba(67, 207, 255, 0.50);
+
+    box-shadow:
+        0 0 25px rgba(0, 191, 255, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.brand-section h1 {
+    margin: 0;
+
+    font-size: clamp(30px, 5vw, 44px);
+
+    letter-spacing: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e8fbff,
+            #53d7ff,
+            #a884ff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.subtitle {
+    margin-top: 5px;
+
+    color: #b6cce0;
+
+    font-size: 15px;
+}
+
+.tagline {
+    margin-top: 7px;
+
+    color: #718da8;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+#content {
+    width: 100%;
+}
+
+
+/* =========================================================
+   COMMON GLASS CARD
+   ========================================================= */
+
+.welcome-card,
+.login-card,
+.register-card,
+.dashboard,
+.upload-section,
+.documents-section,
+.search-section,
+.events-section,
+.settings-section,
+.preview-section,
+.document-text-section,
+.document-section,
+.document-list-section,
+.event-form {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 37, 65, 0.94),
+            rgba(4, 16, 33, 0.97)
+        );
+
+    border:
+        1px solid rgba(74, 190, 255, 0.20);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045);
+}
+
+
+/* =========================================================
+   TOP CRYSTAL LINE
+   ========================================================= */
+
+.welcome-card::before,
+.upload-section::before,
+.documents-section::before,
+.dashboard::before,
+.search-section::before,
+.events-section::before,
+.settings-section::before,
+.preview-section::before,
+.document-text-section::before,
+.login-card::before,
+.register-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+    right: 12%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(71, 212, 255, 0.85),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.welcome-card {
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    padding: 42px 30px;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.welcome-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0, 184, 255, 0.15),
+            rgba(126, 75, 255, 0.18)
+        );
+
+    border:
+        1px solid rgba(82, 204, 255, 0.30);
+
+    box-shadow:
+        0 0 25px rgba(0, 190, 255, 0.08);
+}
+
+.welcome-card h2 {
+    color: #f0fbff;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    color: #8fa9c0;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BUTTON CONTAINER
+   ========================================================= */
+
+.buttons {
+    display: flex;
+
+    gap: 12px;
+
+    justify-content: center;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button,
+.btn {
+    min-height: 44px;
+
+    padding: 11px 18px;
+
+    border:
+        1px solid rgba(72, 210, 255, 0.28);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    color: #eefaff;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(8, 191, 232, 0.95),
+            rgba(82, 109, 255, 0.95)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(24, 170, 255, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease,
+        opacity 0.18s ease,
+        filter 0.18s ease;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(104, 224, 255, 0.60);
+
+    box-shadow:
+        0 11px 28px rgba(0, 0, 0, 0.28),
+        0 0 18px rgba(24, 190, 255, 0.10);
+
+    filter: brightness(1.06);
+}
+
+button:active,
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary,
+button[type="submit"] {
+    background:
+        linear-gradient(
+            100deg,
+            #08bfe8,
+            #526dff
+        );
+}
+
+.btn-secondary {
+    background:
+        rgba(34, 55, 88, 0.85);
+
+    border:
+        1px solid rgba(91, 191, 255, 0.24);
+}
+
+button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    filter: none;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+.dashboard h2,
+.upload-section h2,
+.documents-section h2,
+.search-section h2,
+.events-section h2,
+.settings-section h2,
+.preview-section h2,
+.document-text-section h2,
+.document-section h2,
+.document-list-section h2 {
+    color: #eaf9ff;
+
+    margin-top: 0;
+
+    margin-bottom: 8px;
+}
+
+.dashboard > p,
+.upload-section > p,
+.documents-section > p {
+    color: #8ea8bf;
+}
+
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    margin-top: 20px;
+
+    padding: 25px;
+
+    overflow: hidden;
+}
+
+.dashboard hr {
+    margin: 25px 0;
+
+    border: none;
+
+    border-top:
+        1px solid rgba(75, 193, 255, 0.14);
+}
+
+.dashboard-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin: 22px 0;
+}
+
+.dashboard-buttons button {
+    width: 100%;
+}
+
+
+/* =========================================================
+   VAULT INFO
+   ========================================================= */
+
+.vault-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin: 25px 0;
+}
+
+.vault-info div {
+    position: relative;
+
+    padding: 18px;
+
+    min-height: 105px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 48, 82, 0.90),
+            rgba(6, 22, 42, 0.96)
+        );
+
+    border:
+        1px solid rgba(70, 190, 255, 0.18);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.vault-info div:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(75, 207, 255, 0.45);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.vault-info h4 {
+    margin: 8px 0;
+
+    color: #eefaff;
+}
+
+.vault-info p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #8ca6be;
+}
+
+
+/* =========================================================
+   UPLOAD
+   ========================================================= */
+
+.upload-section {
+    margin-top: 25px;
+
+    padding: 26px;
+
+    overflow: hidden;
+}
+
+.upload-section input[type="file"] {
+    width: 100%;
+
+    margin: 20px 0;
+
+    padding: 15px;
+
+    color: #bfeaff;
+
+    background:
+        rgba(3, 15, 29, 0.80);
+
+    border:
+        1px dashed rgba(65, 199, 255, 0.42);
+
+    border-radius: 12px;
+
+    cursor: pointer;
+}
+
+.upload-section input[type="file"]::file-selector-button {
+    margin-right: 12px;
+
+    padding: 9px 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #087ca8,
+            #4c54a8
+        );
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.upload-section select,
+.upload-section input[type="date"],
+.upload-section input[type="text"] {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    margin: 8px 0 16px;
+
+    color: #e9f9ff;
+
+    background: #071b31;
+
+    border:
+        1px solid rgba(69, 192, 255, 0.24);
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+.upload-section select:focus,
+.upload-section input[type="date"]:focus,
+.upload-section input[type="text"]:focus {
+    border-color: #38cfff;
+
+    box-shadow:
+        0 0 0 3px rgba(56, 207, 255, 0.08);
+}
+
+.upload-section button {
+    width: 100%;
+
+    margin: 10px 0;
+}
+
+#uploadMessage {
+    margin-top: 15px;
+
+    padding: 11px;
+
+    border-radius: 9px;
+
+    background:
+        rgba(20, 95, 130, 0.14);
+
+    border:
+        1px solid rgba(67, 195, 255, 0.10);
+
+    color: #bcecff;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+   ========================================================= */
+
+.documents-section {
+    margin-top: 20px;
+
+    padding: 25px;
+
+    overflow: hidden;
+}
+
+.document-section,
+.document-list-section {
+    margin-top: 20px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+}
+
+.document-card,
+.file-card {
+    position: relative;
+
+    margin: 15px 0;
+
+    padding: 19px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 42, 72, 0.88),
+            rgba(5, 20, 39, 0.94)
+        );
+
+    border:
+        1px solid rgba(64, 190, 255, 0.17);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.document-card::before,
+.file-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+
+    width: 2px;
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(66, 207, 255, 0.65),
+            transparent
+        );
+}
+
+.document-card:hover,
+.file-card:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(66, 207, 255, 0.40);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.30);
+}
+
+.document-card h3,
+.document-card h4,
+.file-card h3,
+.file-card h4 {
+    color: #eafaff;
+
+    margin-bottom: 10px;
+
+    word-break: break-word;
+}
+
+.document-card p,
+.file-card p {
+    color: #91a9bf;
+
+    margin: 7px 0;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+.document-card strong,
+.file-card strong {
+    color: #c8eaff;
+}
+
+.document-card button,
+.file-card button {
+    margin: 7px 5px 0 0;
+
+    background:
+        rgba(24, 70, 108, 0.85);
+
+    border:
+        1px solid rgba(66, 192, 255, 0.20);
+}
+
+
+/* =========================================================
+   OCR TEXT
+   ========================================================= */
+
+.ocr-text {
+    max-height: 180px;
+
+    margin: 10px 0 15px;
+
+    padding: 13px;
+
+    overflow: auto;
+
+    white-space: pre-wrap;
+
+    color: #b8d5e8;
+
+    background:
+        rgba(1, 10, 21, 0.75);
+
+    border:
+        1px solid rgba(69, 191, 255, 0.12);
+
+    border-radius: 10px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-section {
+    padding: 25px;
+
+    margin-top: 20px;
+}
+
+.search-section input,
+.search-section select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    margin: 8px 0 14px;
+
+    color: #e9f9ff;
+
+    background: #071b31;
+
+    border:
+        1px solid rgba(69, 192, 255, 0.24);
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+.search-section input:focus,
+.search-section select:focus {
+    border-color: #38cfff;
+
+    box-shadow:
+        0 0 0 3px rgba(56, 207, 255, 0.08);
+}
+
+.search-section button {
+    margin: 5px;
+}
+
+#searchResults {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   OCR VIEWER
+   ========================================================= */
+
+.document-text-section,
+.preview-section {
+    margin-top: 20px;
+
+    padding: 25px;
+
+    overflow: hidden;
+}
+
+.document-text-section hr,
+.preview-section hr {
+    border: none;
+
+    border-top:
+        1px solid rgba(71, 194, 255, 0.16);
+
+    margin: 18px 0;
+}
+
+.document-text-section pre {
+    max-height: 650px;
+
+    overflow: auto;
+
+    padding: 20px;
+
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    color: #c9e6f7;
+
+    background:
+        rgba(1, 9, 19, 0.88);
+
+    border:
+        1px solid rgba(65, 190, 255, 0.16);
+
+    border-radius: 13px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   DOCUMENT PREVIEW
+   ========================================================= */
+
+#documentPreview {
+    margin-top: 18px;
+
+    padding: 15px;
+
+    min-height: 100px;
+
+    text-align: center;
+
+    background:
+        rgba(1, 10, 21, 0.50);
+
+    border:
+        1px solid rgba(67, 193, 255, 0.14);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+#documentPreview img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 650px;
+
+    margin: auto;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.40);
+}
+
+#documentPreview iframe {
+    display: block;
+
+    width: 100%;
+
+    min-height: 600px;
+
+    border:
+        1px solid rgba(64, 194, 255, 0.20);
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   LOGIN / REGISTER
+   ========================================================= */
+
+.login-card,
+.register-card {
+    width: 100%;
+
+    max-width: 470px;
+
+    margin: 25px auto;
+
+    padding: 30px;
+
+    overflow: hidden;
+}
+
+.login-card h2,
+.register-card h2 {
+    text-align: center;
+
+    color: #eefaff;
+
+    margin-bottom: 20px;
+}
+
+.login-card input,
+.register-card input,
+.login-card select,
+.register-card select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    margin: 8px 0 14px;
+
+    color: #edfaff;
+
+    background: #071b31;
+
+    border:
+        1px solid rgba(68, 193, 255, 0.24);
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+.login-card input:focus,
+.register-card input:focus,
+.login-card select:focus,
+.register-card select:focus {
+    border-color: #3bcfff;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 207, 255, 0.08);
+}
+
+.login-card button,
+.register-card button {
+    width: 100%;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   AUTH ERROR / SUCCESS
+   ========================================================= */
+
+.auth-error,
+.error-message {
+    margin-top: 12px;
+
+    padding: 11px 13px;
+
+    color: #ffd8d8;
+
+    background:
+        rgba(130, 35, 45, 0.16);
+
+    border:
+        1px solid rgba(255, 100, 120, 0.18);
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+}
+
+.auth-success,
+.success-message {
+    margin-top: 12px;
+
+    padding: 11px 13px;
+
+    color: #cffff0;
+
+    background:
+        rgba(25, 130, 100, 0.14);
+
+    border:
+        1px solid rgba(70, 220, 180, 0.18);
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   AUTH SWITCH
+   ========================================================= */
+
+.auth-switch {
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid rgba(72, 190, 255, 0.13);
+
+    text-align: center;
+
+    color: #8faac2;
+
+    font-size: 14px;
+}
+
+.auth-switch button {
+    width: auto;
+
+    min-height: auto;
+
+    margin: 4px 0 0;
+
+    padding: 4px 8px;
+
+    color: #54d7ff;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+}
+
+.auth-switch button:hover {
+    color: #a4ecff;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+.events-section {
+    margin-top: 20px;
+
+    padding: 25px;
+}
+
+.event-card {
+    margin: 14px 0;
+
+    padding: 17px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(19, 46, 79, 0.88),
+            rgba(6, 21, 40, 0.95)
+        );
+
+    border:
+        1px solid rgba(73, 190, 255, 0.18);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(73, 207, 255, 0.40);
+}
+
+.event-card h3 {
+    color: #effbff;
+
+    margin-bottom: 7px;
+}
+
+.event-card p {
+    color: #91a9bf;
+
+    line-height: 1.5;
+}
+
+.event-card button {
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   EVENT FORM
+   ========================================================= */
+
+.event-form {
+    margin: 20px 0;
+
+    padding: 22px;
+}
+
+.event-form input,
+.event-form textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    margin: 7px 0 14px;
+
+    color: #e8f8ff;
+
+    background: #091b32;
+
+    border:
+        1px solid rgba(69, 190, 255, 0.28);
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+.event-form textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+.event-form input:focus,
+.event-form textarea:focus {
+    border-color: #38cfff;
+
+    box-shadow:
+        0 0 0 3px rgba(56, 207, 255, 0.08);
+}
+
+.event-form button {
+    width: 100%;
+
+    min-height: 46px;
+}
+
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+.settings-section {
+    margin-top: 20px;
+
+    padding: 25px;
+}
+
+.settings-card {
+    padding: 18px;
+
+    margin: 12px 0;
+
+    border-radius: 13px;
+
+    background:
+        rgba(12, 38, 66, 0.70);
+
+    border:
+        1px solid rgba(68, 192, 255, 0.16);
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+label {
+    display: block;
+
+    margin-top: 10px;
+
+    margin-bottom: 6px;
+
+    color: #b9d4e8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+   ========================================================= */
+
+.empty-state {
+    padding: 38px 20px;
+
+    text-align: center;
+
+    color: #8faac2;
+
+    background:
+        rgba(7, 20, 39, 0.70);
+
+    border:
+        1px dashed rgba(63, 196, 255, 0.24);
+
+    border-radius: 15px;
+}
+
+.empty-state h3 {
+    margin-top: 0;
+
+    color: #dff7ff;
+}
+
+
+/* =========================================================
+   LOADING / STATUS
+   ========================================================= */
+
+.loading-message,
+.status-message {
+    padding: 15px;
+
+    color: #bfeeff;
+
+    background:
+        rgba(18, 77, 110, 0.16);
+
+    border:
+        1px solid rgba(63, 196, 255, 0.14);
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.app-footer {
+    margin-top: 35px;
+
+    padding: 20px 10px;
+
+    text-align: center;
+
+    color: #6f899f;
+
+    font-size: 12px;
+}
+
+.app-footer p {
+    color: #91aec5;
+
+    margin-bottom: 5px;
+}
+
+.app-footer span {
+    color: #5f7890;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+.welcome-card,
+.dashboard,
+.upload-section,
+.documents-section,
+.search-section,
+.events-section,
+.settings-section,
+.preview-section,
+.document-text-section,
+.login-card,
+.register-card {
+    animation:
+        vaultFadeIn 0.35s ease;
+}
+
+@keyframes vaultFadeIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline:
+        2px solid #3bd5ff;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   TABLETS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        width:
+            min(
+                100% - 24px,
+                760px
+            );
+    }
+
+    .vault-info {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width:
+            calc(100% - 18px);
+
+        padding-top: 18px;
+    }
+
+    .brand-section {
+        margin-bottom: 18px;
+    }
+
+    .vault-logo {
+        width: 58px;
+        height: 58px;
+
+        border-radius: 17px;
+
+        font-size: 27px;
+    }
+
+    .brand-section h1 {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .tagline {
+        padding: 0 15px;
+    }
+
+    .welcome-card {
+        margin-top: 20px;
+
+        padding: 30px 18px;
+
+        border-radius: 17px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button,
+    .buttons .btn {
+        width: 100%;
+    }
+
+    .dashboard,
+    .upload-section,
+    .documents-section,
+    .search-section,
+    .events-section,
+    .settings-section,
+    .preview-section,
+    .document-text-section {
+        padding: 18px;
+
+        border-radius: 16px;
+    }
+
+    .dashboard-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .vault-info {
+        grid-template-columns: 1fr;
+    }
+
+    .document-card,
+    .file-card {
+        padding: 15px;
+    }
+
+    .document-card button,
+    .file-card button {
+        width: 100%;
+
+        margin:
+            6px 0 0;
+    }
+
+    .search-section button {
+        width: 100%;
+
+        margin:
+            5px 0;
+    }
+
+    .login-card,
+    .register-card {
+        margin: 18px auto;
+
+        padding: 21px;
+
+        border-radius: 16px;
+    }
+
+    #documentPreview {
+        padding: 10px;
+
+        border-radius: 13px;
+    }
+
+    #documentPreview iframe {
+        min-height: 500px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        width:
+            calc(100% - 12px);
+    }
+
+    .brand-section h1 {
+        font-size: 27px;
+    }
+
+    .welcome-card {
+        padding: 24px 14px;
+    }
+
+    .welcome-card h2 {
+        font-size: 21px;
+    }
+
+    .dashboard,
+    .upload-section,
+    .documents-section,
+    .search-section,
+    .events-section,
+    .settings-section,
+    .preview-section,
+    .document-text-section {
+        padding: 14px;
+    }
+
+    .login-card,
+    .register-card {
+        padding: 16px;
+    }
+
+    button,
+    .btn {
+        min-height: 43px;
+
+        padding:
+            10px 13px;
+
+        font-size: 13px;
+    }
+
+    .document-text-section pre {
+        padding: 12px;
+
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+    #documentPreview iframe {
+        min-height: 420px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 340px) {
+
+    .welcome-card {
+        padding: 20px 12px;
+    }
+
+    .dashboard,
+    .upload-section,
+    .documents-section,
+    .search-section,
+    .events-section,
+    .settings-section,
+    .preview-section,
+    .document-text-section {
+        padding: 12px;
+    }
+
+    .document-card,
+    .file-card,
+    .event-card {
+        padding: 13px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+    body {
+        color: #000;
+
+        background: #fff;
+    }
+
+    button,
+    .buttons {
+        display: none !important;
+    }
+
+    .dashboard,
+    .documents-section,
+    .document-text-section,
+    .preview-section {
+        color: #000;
+
+        background: #fff;
+
+        border: 1px solid #ccc;
+
+        box-shadow: none;
+    }
+}
+
+
+/* =========================================================
+   END OF MYVAULT STYLE SHEET
+   ========================================================= */

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+venv-1/
+venv-2/
+
+# Environment / secrets
+.env
+.env.*
+
+# Local database
+myvault.db
+*.db
+*.sqlite
+*.sqlite3
+
+# User uploaded files
+uploads/
+
+# Temporary files
+tempCodeRunnerFile.py
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

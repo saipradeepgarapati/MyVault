@@ -1,0 +1,41 @@
+# ======================================================
+# MyVault - Root Git Ignore
+# ======================================================
+
+# Python virtual environments
+venv/
+.venv/
+.venv-1/
+.venv-2/
+.venv-3/
+venv-1/
+venv-2/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment / secrets
+.env
+.env.*
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploaded/user files
+uploads/
+backend/uploads/
+
+# Temporary files
+tempCodeRunnerFile.py
+backend/tempCodeRunnerFile.py
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
