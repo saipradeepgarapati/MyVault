@@ -101,24 +101,21 @@ APP_VERSION = "1.0.0"
 # OCR CONFIGURATION
 # ============================================================
 
-TESSERACT_PATH = (
-    r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+TESSERACT_PATH = os.getenv(
+    "TESSERACT_PATH",
+    "tesseract"
 )
 
-pytesseract.pytesseract.tesseract_cmd = (
-    TESSERACT_PATH
-)
+pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 
 
 # ============================================================
 # POPPLER CONFIGURATION
 # ============================================================
 
-POPPLER_PATH = (
-    r"C:\Users\saipr\Downloads"
-    r"\Release-26.02.0-0"
-    r"\poppler-26.02.0"
-    r"\Library\bin"
+POPPLER_PATH = os.getenv(
+    "POPPLER_PATH",
+    ""
 )
 
 
