@@ -17,12 +17,15 @@
 # ============================================================
 # STANDARD LIBRARY
 # ============================================================
-
 from pathlib import Path
 from datetime import datetime
 import os
 import uuid
 
+from dotenv import load_dotenv
+
+ENV_FILE = Path(__file__).resolve().parent.parent / ".env"
+load_dotenv(ENV_FILE, override=True)
 
 # ============================================================
 # FASTAPI
@@ -100,11 +103,7 @@ APP_VERSION = "1.0.0"
 # ============================================================
 # OCR CONFIGURATION
 # ============================================================
-
-TESSERACT_PATH = os.getenv(
-    "TESSERACT_PATH",
-    "tesseract"
-)
+TESSERACT_PATH = os.getenv("TESSERACT_PATH", "")
 
 pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 
@@ -113,12 +112,7 @@ pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 # POPPLER CONFIGURATION
 # ============================================================
 
-POPPLER_PATH = os.getenv(
-    "POPPLER_PATH",
-    ""
-)
-
-
+POPPLER_PATH = os.getenv("POPPLER_PATH", "")
 # ============================================================
 # UPLOAD CONFIGURATION
 # ============================================================
