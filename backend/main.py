@@ -103,7 +103,11 @@ APP_VERSION = "1.0.0"
 # ============================================================
 # OCR CONFIGURATION
 # ============================================================
-TESSERACT_PATH = os.getenv("TESSERACT_PATH", "")
+
+TESSERACT_PATH = os.getenv(
+    "TESSERACT_PATH",
+    "/usr/bin/tesseract"
+)
 
 pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 
@@ -112,7 +116,10 @@ pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 # POPPLER CONFIGURATION
 # ============================================================
 
-POPPLER_PATH = os.getenv("POPPLER_PATH", "")
+POPPLER_PATH = os.getenv(
+    "POPPLER_PATH",
+    "/usr/bin"
+)
 # ============================================================
 # UPLOAD CONFIGURATION
 # ============================================================
