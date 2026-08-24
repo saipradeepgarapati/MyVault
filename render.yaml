@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: myvault-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    envVars:
+      - key: MYVAULT_SECRET_KEY
+        sync: false
+      - key: TESSERACT_PATH
+        value: /usr/bin/tesseract
+      - key: POPPLER_PATH
+        value: /usr/bin
